@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Games</title>
+    <link rel="stylesheet" href="simple.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- welcome message -->
+      <div class="welcome">
+        <span></span>
+      </div>
+      <div class="start">
+        <button class="all-btn dance">start exploring</button>
+      </div>
+      <!-- welcome message -->
+      <h2 style="text-decoration: underline">simple games</h2>
+      <!-- color changin -->
+      <div class="change">
+        <button id="change" class="all-btn">
+          change page color if you want
+        </button>
+        <button id="change1" class="all-btn">back to main color</button>
+        <br /><br />
+        <hr />
+        <br />
+      </div>
+      <!-- color changin -->
+      <!-- random names ----->
+      <div>
+        <h3>" random names "</h3>
+        <h2 id="name-input"></h2>
+        <button class="all-btn" id="generate">generate</button>
+        <br />
+        <hr />
+        <br />
+      </div>
+      <!-- random names ----->
+      <!-- palindrom game -->
+      <div class="random">
+        <h3 title="like dad,noon">" palindrome game "</h3>
+        <h4>word reads the same backward or forward (like dad , noon ...)</h4>
+        <input id="random-input" type="text" placeholder="write a word" />
+        <h3 id="random-check" class="dance"></h3>
+        <button id="random-btn" class="all-btn">check</button>
+        <br />
+        <hr />
+        <br />
+      </div>
+      <!-- palindrom game -->
+      <!-- age calculation -->
+
+      <div class="age">
+        <h3>calculate your age</h3>
+        <input id="age-input" type="number" placeholder="Enter You Age" />
+        <div class="age-result">
+          <div>
+            <button id="days-btn" class="all-btn1" anim="by days">
+              by days
+            </button>
+            <h4 id="days-input">days</h4>
+          </div>
+          <div>
+            <button id="years-btn" class="all-btn1" anim="by hours">
+              by hours
+            </button>
+            <h4 id="years-input">hours</h4>
+          </div>
+        </div>
+        <div>
+          <button id="age-reset" class="all-btn">reset age</button>
+        </div>
+      </div>
+
+      <br />
+      <hr />
+      <br />
+      <!-- age calculation -->
+      <!-- rock paper scissors GAME >>>> -->
+      <div class="rock-game">
+        <h3>" rock paper scissors game "</h3>
+        <h4>try your luck</h4>
+        <div class="rock-btns">
+          <button id="rock" onclick="game('rock')">
+            <img src="images/Rock.png" alt="" />
+          </button>
+          <button id="paper" onclick="game('paper')">
+            <img src="images/Paper.png" alt="" />
+          </button>
+          <button id="scissors" onclick="game('scissors')">
+            <img src="images/scissors.png" alt="" />
+          </button>
+        </div>
+        <h3 id="rock-choice"></h3>
+        <h3 id="rock-result" ></h3>
+        <h3 id="rock-score">wins: 0 , losses: 0 , draws: 0</h3>
+        <button class="all-btn" id="rock-reset">reset score</button>
+        <br><br><hr><br>
+      </div>
+      <!-- rock paper scissors GAME >>>> -->
+    </div>
+    <script src="simple.js"></script>
+  </body>
+</html>
