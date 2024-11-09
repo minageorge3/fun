@@ -17,7 +17,6 @@ body {
   text-align: center;
   position: relative;
   backdrop-filter: blur(10px);
-
 }
 
 .container::after,
@@ -28,8 +27,7 @@ body {
   border-radius: 50%;
   position: absolute;
   z-index: -10;
-  opacity: .1;
-
+  opacity: 0.1;
 }
 
 .container::after {
@@ -90,16 +88,96 @@ body {
   padding: 2rem 3rem;
   font-size: 2rem;
 }
-
-
 /* welcome message */
+.contact {
+  height: 9rem;
+  font-size: 1.7rem;
+  padding: 1rem;
+  line-height: 3rem;
+  background-color: #a8a8a892;
+}
+.contact a {
+  color: #000;
+}
+.contact a:hover {
+  color: #fff;
+}
+.contact div:nth-child(2) {
+  font-size: 2rem;
+  font-weight: 700;
+  animation: contact 2s infinite linear;
+}
+@keyframes contact {
+  0% {
+    scale: 0.7;
+  }
+  50% {
+    scale: 1;
+  }
+  100% {
+    scale: 0.7;
+  }
+}
+
+.contact a:active,
+.contact a:visited {
+  color: #000;
+}
+/* stop watch 00:00:00 */
+.stopwatch {
+  padding-bottom: 1rem;
+  width: 80%;
+  margin: auto;
+  box-shadow: 0 0 5px #fff;
+}
+
+.stopwatch h2 {
+  margin-top: 1rem;
+}
+.fa-stopwatch {
+  animation: clock 0.5s infinite linear;
+}
+@keyframes clock {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+#stopwatch-num {
+  padding: 1rem;
+  font-size: 2rem;
+}
+.stopwatch-btns {
+  margin-block: 1rem;
+}
+.stopwatch i:hover {
+  cursor: pointer;
+}
+#stopwatchStop,
+#stopwatchReset {
+  font-size: 1.7rem;
+  color: gray;
+}
+#stopwatchPlay {
+  font-size: 2.5rem;
+  margin: 0 1rem;
+  color: #eb740c;
+}
+
+/* stop watch 00:00:00 */
+
 /* color change */
 .change {
   margin-block: 1rem;
 }
 
 .all-btn {
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
 }
 
@@ -115,8 +193,7 @@ body {
 
 #change1 {
   display: block;
-  margin: 1rem auto .1rem;
-
+  margin: 1rem auto 0.1rem;
 }
 
 /* random names */
@@ -142,17 +219,15 @@ body {
 
 @keyframes dance {
   0% {
-    scale: .9;
+    scale: 0.9;
   }
 
   50% {
     scale: 1;
-
   }
 
   100% {
-    scale: .9;
-
+    scale: 0.9;
   }
 }
 
@@ -175,7 +250,11 @@ body {
 
 .age::after {
   content: "";
-  background-image: conic-gradient(from var(--ageangle), transparent 50%, rgb(0, 136, 255));
+  background-image: conic-gradient(
+    from var(--ageangle),
+    transparent 50%,
+    rgb(0, 136, 255)
+  );
   width: 17.5rem;
   height: 16.5rem;
   left: 50%;
@@ -188,13 +267,12 @@ body {
 
 @keyframes agemove {
   0% {
-    --ageangle: 0deg
+    --ageangle: 0deg;
   }
 
   100% {
-    --ageangle: 360deg
+    --ageangle: 360deg;
   }
-
 }
 
 #age-input {
@@ -213,7 +291,7 @@ body {
 }
 
 .age-result div button {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   border: none;
   background-color: rgb(168, 168, 168);
 }
@@ -223,7 +301,7 @@ body {
   position: relative;
   transform-style: preserve-3d;
   display: block;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   /* perspective: 1200px; */
 }
 
@@ -273,9 +351,11 @@ body {
   width: 4rem;
   padding: 0.5rem;
 }
-#rock-result{
+
+#rock-result {
   font-size: 1.5rem;
 }
+
 .rock-reset {
   margin-block: 1rem;
 }
@@ -294,3 +374,23 @@ body {
 }
 
 /* rock paper scissors GAME >>>>>>>>>> */
+/* up button  ^^^^^ */
+#up {
+  color: #fff;
+  background-color: black;
+  padding: 0.5rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  transition: 0.3s ease-in-out;
+  z-index: 1000;
+  border-radius: 2rem 2rem 0 0;
+}
+#up:hover {
+  background-color: rgb(140, 140, 140);
+}
+
+/* up button  ^^^^^ */

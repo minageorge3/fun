@@ -17,6 +17,65 @@ start.addEventListener("click", function () {
 });
 
 // welcome message
+
+// stop watch 00:00:00
+let stopwatchNum = document.getElementById("stopwatchNum");
+let stopwatchPlay = document.getElementById("stopwatchPlay");
+let stopwatchStop = document.getElementById("stopwatchStop");
+let stopwatchReset = document.getElementById("stopwatchReset");
+
+let [watchHr, watchMin, watchSec] = [0, 0, 0];
+let timer = null;
+stopwatchPlay.onclick = function () {
+  if (timer !== null) {
+    clearInterval(timer);
+  }
+  timer = setInterval(watchStart, 1000);
+  stopwatchStop.style.color = "gray";
+  stopwatchPlay.style.color = "#eb740c";
+  stopwatchPlay.classList.remove("fa-circle-play");
+  stopwatchPlay.innerHTML = '<i class="fa-regular fa-circle-pause"></i>';
+};
+function watchStart() {
+  watchSec++;
+  if (watchSec === 60) {
+    watchSec = 0;
+    watchMin++;
+    if (watchMin === 60) {
+      watchMin = 0;
+      watchHr++;
+    }
+  }
+
+  displayWatch();
+}
+
+function displayWatch() {
+  whr = watchHr < 10 ? "0" + watchHr : watchHr;
+  wmin = watchMin < 10 ? "0" + watchMin : watchMin;
+  wsec = watchSec < 10 ? "0" + watchSec : watchSec;
+  stopwatchNum.innerHTML = `${whr}:${wmin}:${wsec}`;
+}
+stopwatchStop.onclick = function () {
+  clearInterval(timer);
+  timer = null;
+  stopwatchStop.style.color = "red";
+  stopwatchPlay.style.color = "#eb740cbc";
+  stopwatchPlay.innerHTML = "";
+  stopwatchPlay.classList.add("fa-circle-play");
+};
+stopwatchReset.onclick = () => {
+  clearInterval(timer);
+  timer = null;
+  [watchHr, watchMin, watchSec] = [0, 0, 0];
+  displayWatch();
+  stopwatchPlay.innerHTML = "";
+  stopwatchPlay.classList.add("fa-circle-play");
+  stopwatchPlay.style.color = "#eb740cbc";
+
+  // stopwatchNum.innerHTML = `00:00:00`;
+};
+// stop watch 00:00:00
 // change color
 body = document.querySelector(".container");
 const change = document.getElementById("change");
@@ -31,6 +90,7 @@ const change1 = document.getElementById("change1");
 change1.addEventListener("click", function () {
   body.style.backgroundColor = "#e7e7e7";
 });
+
 // change color
 // random names >>>>
 const generate = document.getElementById("generate");
@@ -154,3 +214,19 @@ const score = {
   draw: 0,
 };
 // rock paper scissors GAME >>>>>>>>>>>>>>
+// up button^^^^^^^
+up = document.getElementById("up");
+window.onscroll = function () {
+  if (window.scrollY >= 400) {
+    up.style.cssText = "display:block";
+  } else {
+    up.style.display = "none";
+  }
+};
+up.onclick = function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+// up button^^^^^^^
